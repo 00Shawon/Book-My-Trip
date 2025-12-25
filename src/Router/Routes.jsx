@@ -6,6 +6,7 @@ import AllTickets from "../Pages/AllTickets";
 import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Pages/auth/Login";
 import Register from "../Pages/auth/Register";
+import MyProfile from "../Pages/MyProfile";
 
 
 export const router = createBrowserRouter([
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
             {
                 path:'all-tickets',
                 Component:AllTickets 
+            },
+            {
+                path:'my-profile',
+                Component:MyProfile
             },
             {
                 path:'*',

@@ -48,8 +48,24 @@ const handleLogOut = () => {
     <Link to='/auth/login' className="md:btn md:text-white btn-primary mr-2">Login</Link>
     <Link to='/auth/register' className="md:btn btn-outline text-secondary">Register</Link>
   </div> : <div className="navbar-end">
-    <img src={user.photoURL} className='w-12 rounded-full mr-2'  alt="" />
-  <a onClick={handleLogOut} className="md:btn md:btn-outline text-primary hover:bg-primary hover:text-white hover:font-bold">Logout<IoIosLogOut className='' size={24} /> </a>
+   
+
+<div className="dropdown dropdown-hover">
+  <div tabIndex={0} role="button" className=" m-1">
+     <img src={user.photoURL} title={`${user.displayName}`} className='w-12 rounded-full mr-2'  alt="" />
+  </div>
+  <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+    <li><a onClick={handleLogOut} className=" hover:bg-primary hover:text-white hover:font-bold">Logout<IoIosLogOut className='' size={24} /> </a></li>
+    <li><Link to='/my-profile'>My Profile</Link></li>
+  </ul>
+</div>
+
+
+
+
+
+
+  
   </div>
  }
 </div> 
