@@ -18,7 +18,7 @@ const handleLogOut = () => {
        <div className='flex flex-col lg:flex-row  items-center gap-6 '>
        <NavLink to='/'>Home</NavLink>
        <NavLink to='/all-tickets'>All Tickets</NavLink>
-       <NavLink to='/'>Dashboard</NavLink>
+       <NavLink to='/dashboard'>Dashboard</NavLink>
        </div>
     )
     return (

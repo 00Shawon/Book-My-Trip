@@ -7,6 +7,20 @@ import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Pages/auth/Login";
 import Register from "../Pages/auth/Register";
 import MyProfile from "../Pages/MyProfile";
+import DashboardLayout from "../Layout/DashboardLayout";
+import AddTicket from "../Pages/Dashboard/Vendor/AddTicket";
+import MyBookedTickets from "../Pages/Dashboard/User/MyBookedTickets";
+import TransactionHistory from "../Pages/Dashboard/User/TransactionHistory";
+import AddTickets from "../Pages/Dashboard/Vendor/AddTickets";
+import MyAddedTickets from "../Pages/Dashboard/Vendor/MyAddedTickets";
+import RequestedBookings from "../Pages/Dashboard/Vendor/RequestedBookings";
+import RevenueOverview from "../Pages/Dashboard/Vendor/RevenueOverview";
+import ManageTickets from "../Pages/Dashboard/Admin/ManageTickets";
+import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
+import AdvertiseTickets from "../Pages/Dashboard/Admin/AdvertiseTickets";
+import PrivateRoute from "./PrivateRoute";
+import SeeDetails from "../Pages/SeeDetails";
+
 
 
 export const router = createBrowserRouter([
@@ -27,6 +41,10 @@ export const router = createBrowserRouter([
                 Component:MyProfile
             },
             {
+                path:'see-details/:id',
+                Component: SeeDetails
+            },
+            {
                 path:'*',
                 Component:ErrorPage
             }
@@ -37,14 +55,69 @@ export const router = createBrowserRouter([
         Component:AuthLayout,
         children:[
             {
-                path:'/auth/login',
+                path:'login',
                 Component:Login
             },
             {
-                path:'/auth/register',
+                path:'register',
                 Component:Register
 
+            },
+            {
+                path:'see-details',
+                Component: SeeDetails
             }
         ]
+    },
+    {
+        path:'dashboard',
+        element: <PrivateRoute><DashboardLayout/></PrivateRoute>,
+        children:[
+            {
+                index:true,
+                Component:MyProfile
+            },
+            {
+                path:'add-ticket',
+                Component: AddTicket
+            },
+            {
+                path:'my-booked-tickets',
+                Component: MyBookedTickets
+            },
+            {
+                path:'transaction-history',
+                Component: TransactionHistory
+            },
+            {
+                path:'add-tickets',
+                Component: AddTickets
+            },
+            {
+                path:'my-added-tickets',
+                Component: MyAddedTickets
+            },
+            {
+                path:'requested-bookings',
+                Component: RequestedBookings
+            },
+            {
+                path:'revenue-overview',
+                Component: RevenueOverview
+            },
+            {
+                path:'manage-tickets',
+                Component: ManageTickets
+            },
+            {
+                path:'manage-users',
+                Component: ManageUsers
+            },
+            {
+                path:'advertise-tickets',
+                Component: AdvertiseTickets
+            },
+        ]
     }
+   
 ])

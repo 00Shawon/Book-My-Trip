@@ -1,12 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-
 import { Link, useLocation, useNavigate } from "react-router";
-
 import axios from "axios";
-
 import SocialLogin from "./SocialLogin";
-import useAuth from "../../Hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
+
 
 const Register = () => {
   const {
